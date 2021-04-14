@@ -1,0 +1,71 @@
+
+        <form [formGroup]="employeeForm">
+                <div class="form-field">
+                    <label>First Name<i class="star">*</i></label>
+                    <input [style.border]="submitted && f.firstName.errors?'1px solid red':'none'"  type="text" formControlName="firstName" class="field-input" placeholder="Enter First Name" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                    
+                        <div class="formerror" *ngIf="submitted && f.firstName.errors && f.firstName.errors.required">Required</div>
+                        <div class="formerror" *ngIf="submitted && f.firstName.errors && f.firstName.errors.pattern">Enter letters and space only</div>
+                    
+                </div>
+                <div class="form-field">
+                    <label>Last Name<i class="star">*</i></label>
+                    <input [style.border]="submitted && f.lastName.errors?'1px solid red':'none'" type="text" formControlName="lastName" class="field-input" placeholder="Enter Last Name" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                    
+                        <div class="formerror" *ngIf="submitted && f.lastName.errors && f.lastName.errors.required">Required</div>
+                        <div class="formerror" *ngIf="submitted && f.lastName.errors && f.lastName.errors.pattern">Enter letters and space only</div>
+                    
+                </div>
+            <div class="form-field">
+                <label>Email<i class="star">*</i></label>
+                <input [style.border]="submitted && f.email.errors?'1px solid red':'none'"  type="text" formControlName="email" class="field-input" placeholder="Enter Email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                
+                    <div class="formerror" *ngIf="submitted && f.email.errors && f.email.errors.required">Required</div>
+                    <div class="formerror" *ngIf="submitted && f.email.errors && f.email.errors.email">Invalid email address</div>
+                
+            </div>
+            <div class="form-field">
+                <label>Job Title<i class="star">*</i></label>
+                <input [style.border]="submitted && f.jobTitle.errors?'1px solid red':'none'"  type="text" formControlName="jobTitle" class="field-input" placeholder="Enter Job Title" [ngClass]="{ 'is-invalid': submitted && f.jobTitle.errors }" />
+            
+                    <div class="formerror" *ngIf="submitted && f.jobTitle.errors && f.jobTitle.errors.required">Required</div>
+                    <div class="formerror" *ngIf="submitted && f.jobTitle.errors && f.jobTitle.errors.pattern">Enter letters and space only</div>
+               
+            </div>
+            <div class="form-field">
+                <label>Office<i class="star">*</i></label>
+                <input [style.border]="submitted && f.office.errors?'1px solid red':'none'" type="text" formControlName="office" class="field-input" placeholder="Enter Office" [ngClass]="{ 'is-invalid': submitted && f.office.errors }" />
+               
+                    <div class="formerror" *ngIf="submitted && f.office.errors && f.office.errors.required">Required</div>
+                    <div class="formerror" *ngIf="submitted && f.office.errors && f.office.errors.pattern">Enter letters and space only</div>
+            
+            </div>
+            <div class="form-field">
+                <label>Department<i class="star">*</i></label>
+                <input [style.border]="submitted && f.department.errors?'1px solid red':'none'" type="text" formControlName="department" class="field-input" placeholder="Enter Department" [ngClass]="{ 'is-invalid': submitted && f.department.errors }" />
+               
+                    <div class="formerror" *ngIf="submitted && f.department.errors && f.department.errors.required">Required</div>
+                    <div class="formerror" *ngIf="submitted && f.department.errors && f.department.errors.pattern">Enter letters and space only</div>
+                
+            </div>
+            <div class="form-field">
+                <label>Phone<i class="star">*</i></label>
+                <input [style.border]="submitted && f.phone.errors?'1px solid red':'none'" type="text" formControlName="phone" class="field-input" placeholder="Enter Phone" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+                
+                    <div class="formerror" *ngIf="submitted && f.phone.errors && f.phone.errors.required">Required</div>
+                    <div class="formerror" *ngIf="submitted && f.phone.errors && f.phone.errors.pattern">Phone must be 10 digits</div>
+                
+            </div>
+            <div class="form-field">
+                <label>Skype ID<i class="star">*</i></label>
+                <input [style.border]="submitted && f.skype.errors?'1px solid red':'none'" type="text" formControlName="skype" class="field-input" placeholder="Enter Skype Id" [ngClass]="{ 'is-invalid': submitted && f.skype.errors }" />
+               
+                    <div class="formerror" *ngIf="submitted && f.skype.errors && f.skype.errors.required">Required</div>
+                    <div class="formerror" *ngIf="submitted && f.skype.errors && f.skype.errors.email">Invalid skype Id</div>
+                
+            </div>
+            <div class="form-field button-bottom">
+                <button class="form-button" type="reset" (click)="onReset()">Cancel</button>
+                <button class="form-button text-right" (click)="onSave()" >Save</button>
+            </div>
+        </form>
